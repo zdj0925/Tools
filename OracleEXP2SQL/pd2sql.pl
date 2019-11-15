@@ -5,9 +5,9 @@
 use strict;
 use DBI;
 
-my $tnsname="emcsdb";
-my $username="cmbcemcs";
-my $password="cmbcemcs";
+my $tnsname="xxxxdb"; #TNSNAME
+my $username="xxxxxxxs"; #USERNAME
+my $password="xxxxxxxs";#PASSWORD
 #my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
 #my $YYYYMMDD = sprintf("%04d%02d%02d", $year+1900, $mon+1, $mday);          
 #my $HHmmSS   = sprintf("%02d%02d%02d", $hour, $min, $sec);
