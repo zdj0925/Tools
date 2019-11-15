@@ -1,0 +1,35 @@
+#PE来账转产品请求接口
+IPADDR      =   197.3.176.47                # IP
+PROT        =   9551                        #端口
+#DataFile    =   ./fix/10001.dat             #数据文件
+#Separator   =   \^
+Encoding    =   utf8
+#PE来账转产品请求接口
+FunctionId     = 50203                         #功能号
+ExSerial       =638YYYYMMDDHHmmSSSTR06638STR06 #发起方流水号
+OrderId        = ZHAODENGJI__STR20             #商户订单号
+BankNo         =                               #银行编号
+SecuNo         = 0003                          #商户编号
+FromFlag       = 3                             #发起方式 0-客户 1-商户 2-银行 3-其他
+BranchNo       = 8330154601                    #交易机构
+Channel        = 1400                          #交易渠道
+OperNo         = 8330154601                    #交易柜员
+TransDate      = YYYYMMDD                      #交易日期
+TransTime      = HHmmSS                        #交易时间
+Reserve        =                               #备用字段
+Reserve2       =                               #备用字段
+HostAction     = 30120201012301103010100       #交易行为
+HostPrdCode    = 993010000000000000            #产品编码
+DraweePartyId  =                               #付款账户开户行
+DraweePath     =0056                           #付款方资金通道
+DraweeAccNo    = 6226223300945865              #付款人帐号
+DraweeAccName  = 沈菊菊                        #付款人名称
+CurrType       = RMB                           #币种
+CashFlag       = 0                             #钞汇标识
+Amt            =3.21                           #金额
+PayeeAccName   = 内部测试存管结算户(客户资金专户）                              #收款人户名
+PayeeAccNo     =609871186                      #收款人账号
+Postscript     =                               #摘要
+Summary        =                               #摘要
+ExtendData     = oseq63820180516113608256115595256115 #扩展字段 orgCHNO=value1|clearStat=value2|表示对存疑流水补清算,1代表已清算
+#ExtendData     = oseq59520180509105904522715595522715     #扩展字段 orgCHNO=value1|clearStat=value2|表示对存疑流水补清算,1代表已清算

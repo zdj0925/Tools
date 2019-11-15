@@ -1,0 +1,39 @@
+#商户出金交易
+IPADDR      =   197.3.176.47                # IP
+PROT        =   9551                        #端口
+DataFile    =   ./fix/10001.dat             #数据文件
+Separator   =   \^
+Encoding    =   utf8
+
+
+FunctionId  =                               #交易代码
+OrderId     =                               #商户订单号
+ExSerial    =                               #发起方流水号
+SecuNo      =                               #商户编号
+FromFlag    =                               #发起方式 0-客户 1-商户 2-银行 3-其他
+Channel     =                               #交易渠道
+BranchNo    =                               #交易机构
+OperNo      =                               #交易柜员
+TransDate   =                               #交易日期
+TransTime   =                               #交易时间
+Remark1     =                               #备注信息
+Reserve1    = 
+Reserve2    =                               #商户私有信息
+FundAcc     =                               #付款方账户
+CurrType    = 
+TargFundAcc =                               #收款方账户
+AssoOrder   =                               #原成交订单号
+AssoDate    =                               #原成交日前
+Amt         =                               #交易金额
+RefundAmt   =                               #退单金额
+RedAmt      =                               #红包金额
+FeeCode1    =                               #费用编号1
+Fee1        =                               #退还费用1
+FeeAcc1     =                               #原费用收款账号1
+FeeCode2    =                               #费用编号2
+Fee2        =                               #退回费用2
+FeeAcc2     =                               #原费用收款账号2
+FeeCode3    =                               #费用编号3
+Fee3        =                               #退回费用3
+FeeAcc3     =                               #原费用收款账号3
+Summary     = 

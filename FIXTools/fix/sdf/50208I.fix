@@ -1,0 +1,25 @@
+#PE来账转产品请求接口
+FunctionId     =                               #功能号
+ExSerial       =                               #发起方流水号
+OrderId        =                               #商户订单号
+BankNo         =                               #银行编号
+SecuNo         =                               #商户编号
+BranchNo       =                               #交易机构
+FromFlag       =                               #发起方式 0-客户 1-商户 2-银行 3-其他
+Channel        =                               #交易渠道
+OperNo         =                               #交易柜员
+TransDate      =                               #交易日期
+TransTime      =                               #交易时间
+Amt            =                               #金额
+CurrType       =                               #币种 
+HostAction     =                               #交易行为
+HostPrdCode    =                               #产品编码
+OriHostAction  =                               #原交易行为
+OriHostPrdCode =                               #原产品编码
+RelDomain      =                               #发起冲正系统编码
+Reserve        =                               #备用字段
+Reserve2       =                               #备用字段
+OrderNo        =                               #原支付核心流水
+Summary        =                               #摘要
+Status         =                               #交易状态
+ExtendData     =                               #扩展字段

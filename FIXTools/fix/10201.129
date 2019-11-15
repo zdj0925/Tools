@@ -1,0 +1,35 @@
+IPADDR      =    197.3.176.47               
+PROT        =    9551          
+Encoding    =    utf8
+
+#平台到客户调整金额
+FunctionId  =    10201
+OrderId     =    STR32
+ExSerial    =    595YYYYMMDDHHmmSSSTR06595STR06
+#ExSerial    =    STR32
+SecuNo      =    0003
+FromFlag    =    1
+Channel     =    1402
+BranchNo    =    0101
+OperNo      =    zdj0999999
+TransDate   =    YYYYMMDD
+TransTime   =    HHmmSS
+Remark      =    
+Reserve1    =    
+Reserve2    =    
+
+BusinCode   =    129
+#FundAcc     =    9595915603000379  #平台账户
+FundAcc     =    9595000007908003    #客户账户
+SubCode     =    
+PrdCode     =    
+Amt         =    1.00
+CurrType    =    156
+Vol         =    
+InCome      =    
+TargFundAcc =    9595000007901004
+Summary     =   zhaodj add amt
+StartDate   =    
+EndDate     =    
+AssoSerial  =    
+InvestAmt   =    

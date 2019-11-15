@@ -1,0 +1,21 @@
+#固定二维码查询描述文件
+
+#固定二维码查询请求接口
+FunctionId  =                               #交易代码
+OrderId     =                               #商户订单号 
+ExSerial    =                               #发起方流水号
+SecuNo      =                               #商户编号
+FromFlag    =                               #发起方式
+Channel     =                               #交易渠道
+BranchNo    =                               #交易机构
+OperNo      =                               #交易柜员
+TransDate   =                               #交易日期
+TransTime   =                               #交易时间
+Remark      =                               #备注信息
+Reserve1    =                               #交易附加信息 
+Reserve2    =                               #商户私有信息 
+
+TwoDimenId  =                               #二维码标识号
+FundAcc     =                               #资金账号
+OffSet      =                               #定位串
+QueryNum    =                               #查询行数

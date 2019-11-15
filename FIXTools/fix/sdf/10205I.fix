@@ -1,0 +1,41 @@
+#结算中心交易
+IPADDR      =   197.3.176.47                # IP
+PROT        =   9551                        #端口
+DataFile    =   ./fix/10001.dat             #数据文件
+Separator   =   \^
+Encoding    =   utf8
+
+
+FunctionId  =                               #交易代码
+OrderId     =                               #商户订单号
+ExSerial    =                               #发起方流水号
+SecuNo      =                               #商户编号
+FromFlag    =                               #发起方式 0-客户 1-商户 2-银行 3-其他
+Channel     =                               #交易渠道
+BranchNo    =                               #交易机构
+OperNo      =                               #交易柜员
+TransDate   =                               #交易日期
+TransTime   =                               #交易时间
+Remark      =                               #备注信息
+Reserve1    = 
+Reserve2    =                               #商户私有信息
+BusinCode   =                               #业务类别
+SubCode     =                               #子业务代码
+RiskAcc     =                               #资金账号
+FundAcc     =                               #资金账号
+PrdCode     =                               #项目代码
+Amt         =                               #交易金额
+CurrType    =                               #币种
+InCome      =                               #付息金额
+TargAcc     =                               #收款账号
+TargAccName =                               #收款账号
+BankNo      =                               #银行编号
+OpenBranch  =                               #开户行大额支付号
+Summary     =                               #摘要信息
+FeeCode1    =                               #费用编号1
+Fee1        =                               #费用2
+FeeCode2    =                               #费用编号2
+Fee2        =                               #费用2
+FeeCode3    =                               #费用编号3
+Fee3        =                               #费用3
+AssoSerial  =                               #转让流水号    

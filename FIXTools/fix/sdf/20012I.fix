@@ -1,0 +1,31 @@
+IPADDR      =   197.0.64.107                # IP
+PROT        =   9551                        #端口
+DataFile    =   ./fix/10001.dat             #数据文件
+Separator   =   \^
+Encoding    =   utf8
+
+
+
+FunctionId  =  20012                        #交易代码
+OrderId     =  zhaodjSTR20                  #商户订单号
+ExSerial    =  STR32                        #发起方流水号
+SecuNo      =  000000                       #商户编号
+FromFlag    =  1                            #发起方式 0-客户 1-商户 2-银行 3-其他
+Channel     =  1402                         #交易渠道
+BranchNo    =  100                          #交易机构
+OperNo      =  zhaodj                       #交易柜员
+TransDate   =  YYYYMMDD                     #交易日期
+TransTime   =  HHmmSS                       #交易时间
+Remark      =                               #备注信息
+Reserve1    = 
+Reserve2    =                               #商户私有信息
+OperFlag    = 1                             #0-提现申请 1-提现确认 2-提现取消 其他或不填写为单步实时提现
+AssoDate    = YYYYMMDD                      #商户订单号 20151201
+AssoOrder   =                               #商户订单号
+OperMode    = 0                             #操作方式 0-同步 1-异步  缺省同步
+CheckMode   =                               #对账模式 0-全量  1-变动  缺省按平台参数       
+
+BankNo=00
+TermNo=tty01
+AuthOper=12345678
+

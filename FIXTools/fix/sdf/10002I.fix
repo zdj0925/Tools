@@ -1,0 +1,32 @@
+#dfa
+IPADDR      =   197.3.176.47                # IP
+PROT        =   9551                        #端口
+DataFile    =   ./fix/10001.dat             #数据文件
+Separator   =   \^
+Encoding    =   utf8
+#客户线上充值
+FunctionId  =   10002                       #交易代码
+OrderId     =   STR20                       #商户订单号
+ExSerial    =595YYYYMMDDHHmmSSSTR06595STR06 #发起方流水号
+SecuNo      =   3210                        #商户编号
+FromFlag    =   2                           #发起方式 0-客户 1-商户 2-银行 3-其他
+Channel     =   1401                        #交易渠道
+BranchNo    =   0101                        #交易机构
+OperNo      =   x620999999                  #交易柜员
+TransDate   =   YYYYMMDD                    #交易日期
+TransTime   =   HHMMDD                      #交易时间
+Remark      =                               #备注信息
+Reserve1    =                               #交易附加信息(报文密钥、校验值等，系统负责透明转发)
+Reserve2    =                               #商户私有信息
+FundAcc     =   FIELD01                     #资金账号
+SecuAcc     =   FIELD02                     #商户方账号
+BankAcc     =   FIELD03                     #银行账号
+CurrType    =   FIELD00                     #币种
+OpenBranch  =   156                         #开户行大额支付号
+BindMode    =                               #绑定模式    0-不开通代扣 1-开通代扣 
+ActorName   =   0                           #经办人姓名
+ActorIdType =                               #经办人证件类型
+ActorIdCode =                               #经办人证件号码
+Mobile      =                               #手机号码
+AccName     =   FIELD10                     #账号名称 机构户必输
+BankNo      =                               #银行编号

@@ -1,0 +1,23 @@
+#通知交易银行对账文件信息
+FunctionId  =                               #交易代码
+OrderId     =                               #商户订单号
+ExSerial    =                               #发起方流水号
+SysDate     =                               #发生交易的系统日期
+SysTime     =                               #发生交易的交易时间
+SecuNo      =                               #商户编号
+BankId      =                               #银行代码
+Reserve2    = 
+SerialNo    =                               #流水号
+ClientName  =                               #客户姓名
+SecuAcc     =                               #商户方账号
+FundAcc     =                               #资金账号
+BankNo      =                               #银行编号
+BankAcc     =                               #银行账号
+Amt         =                               #金额
+CurrType    =                               #币种
+FileName    =                               #币种
+Summary     =                               #风险提示信息
+LogSerial   =                               #日志号
+BindFlag    =                               #绑定标志
+AssoSerial  =                               #非空表示冲正交易,值为待冲正订单号
+IsZip       =                               #文件压缩标志

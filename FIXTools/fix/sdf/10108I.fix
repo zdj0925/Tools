@@ -1,0 +1,35 @@
+#客户投资申请接口描述文件
+#IPADDR      =   197.3.176.47                # IP
+IPADDR      =   197.0.64.107                # IP
+PROT        =   9551                        #端口
+DataFile    =   ./fix/10001.dat             #数据文件
+Separator   =   \^
+Encoding    =   utf8
+
+#客户投资申请请求接口
+FunctionId  =   10108                       #交易代码
+OrderId     =   STR32                       #商户订单号
+ExSerial    =   STR32                       #发起方流水号
+SecuNo      =   0010                        #商户编号
+FromFlag    =   0                           #发起方式
+Channel     =                               #交易渠道
+BranchNo    =   0101                        #交易机构
+OperNo      =   zhaodj                      #交易柜员
+TransDate   =   YYYYMMDD                    #交易日期
+TransTime   =   HHmmSS                      #交易时间
+Remark      =                               #备注信息
+Reserve     =                               #交易附加信息,数据库不保存
+Reserve1    =                               #保留字段,数据库保存
+Reserve2    =                               #商户私有信息
+
+FundAcc     =   9595000051292007            #资金账号 
+PrdCode     =   2019062899200               #项目代码
+Vol         =   30000
+FeeCode1    =   404                         #费用代码2
+Fee1        =   330.00
+FeeCode2    =                               #费用代码3
+Fee2        =     
+FeeCode3    =                               #费用代码3  
+Fee3        =     
+OutProtocolNo    =                          #转出协议号   
+FrozenFlag  =                               #冻结标志           

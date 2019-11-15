@@ -1,0 +1,31 @@
+IPADDR      =    197.3.176.47                # IP
+PROT        =    9551                          #端口
+DataFile    =    ./data/10002.dat           #数据文件
+Separator   =    \^
+Encoding    =    utf8
+
+FunctionId  =    10002
+OrderId     =    STR20
+ExSerial    =    595YYYYMMDDHHmmSSSTR06595STR06
+SecuNo      =    3210
+FromFlag    =    2
+Channel     =    1401
+BranchNo    =    0101
+OperNo      =    x620999999
+TransDate   =    YYYYMMDD
+TransTime   =    HHMMDD
+Remark      =    
+Reserve1    =    
+Reserve2    =    
+FundAcc     =    FIELD01
+SecuAcc     =    FIELD02
+BankNo      =    FIELD03
+BankAcc     =    FIELD00
+CurrType    =    156
+OpenBranch  =    
+BindMode    =    0
+ActorName   =    
+ActorIdType =    
+ActorIdCode =    
+Mobile      =    FIELD10
+    

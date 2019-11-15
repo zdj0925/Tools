@@ -1,0 +1,21 @@
+#授权协议维护接口描述文件
+
+#授权协议维护接口
+FunctionId  =                               #交易代码
+OrderId     =                               #商户订单号
+ExSerial    =                               #发起方流水号
+SecuNo      =                               #商户编号
+FromFlag    =                               #发起方式
+Channel     =                               #交易渠道
+BranchNo    =                               #交易机构
+OperNo      =                               #交易柜员
+TransDate   =                               #交易日期
+TransTime   =                               #交易时间
+Remark1     =                               #备注信息
+Reserve     =                               #交易附加信息,数据库不保存
+Reserve1    =                               #保留字段,数据库保存
+Reserve2    =                               #
+AssoSerial  =                               #确认系统流水号
+TransAction =                               #交易类别 1-证件复核确认 
+OperFlag    =                               #操作标识
+Status      =                               #操作状态 S-成功 E-失败

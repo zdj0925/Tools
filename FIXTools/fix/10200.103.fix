@@ -1,0 +1,37 @@
+IPADDR     = 197.3.136.24               
+#IPADDR     = 197.3.176.47               
+PROT       = 9551                        
+Encoding   = utf8
+
+
+FunctionId = 10200
+OrderId    = STR32
+ExSerial    =    595YYYYMMDDHHmmSSSTR06595STR06
+#ExSerial   = STR32
+TransDate  = YYYYMMDD
+TransTime  = HHMMSS
+SecuNo     = 1025
+FromFlag   = 1
+Channel    = 
+BranchNo   = 0101
+OperNo     = x620999999
+Remark     = 
+Reserve1   = 
+Reserve2   = 
+
+AssoSerial = 
+FundAcc    = 9595100033863019
+PrdCode    = 8832
+Vol        =115010.23
+Amt        =115010.23
+CfmAmt     =115010.23
+CfmVol     =115010.23
+RedAmt     = 
+FeeCode1   = 
+Fee1       = 
+FeeCode2   = 
+Fee2       = 
+FeeCode3   = 
+Fee3       = 
+FrozenFlag = 
+AssoOrder  = 201711021559081689285250000150

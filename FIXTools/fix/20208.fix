@@ -1,0 +1,24 @@
+#IPADDR=197.3.176.47               
+IPADDR=197.0.64.107               
+PROT=9551                        
+
+FunctionId = 20208
+OrderId    = 
+OperNo     = x620999999
+ExSerial    =    595YYYYMMDDHHmmSSSTR06595STR06
+#ExSerial   = STR32           
+SecuNo     = 3210
+FromFlag   = 1
+Channel    = 1402 
+BranchNo   = 0101
+TransDate  = YYYYMMDD    
+TransTime  = HHmmSS     
+Remark     =
+Reserve1   = 
+Reserve2   =
+
+OperFlag   = 0
+MaxAmt     =
+MinAmt     =
+ClientType =
+Summary   = zhaodjlllllllllllllllll

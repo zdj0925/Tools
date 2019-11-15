@@ -1,0 +1,40 @@
+#IPADDR     = 197.3.136.24               
+IPADDR     = 197.3.176.47               
+PROT       = 9551                        
+Encoding   = utf8
+
+FunctionId = 10104
+OrderId    = jimboxYYYYMMDDHHmmSS
+ExSerial    =    595YYYYMMDDHHmmSSSTR06595STR06
+#ExSerial   = STR32
+SecuNo     = 0001
+FromFlag   = 0
+Channel    =
+TransDate  = YYYYMMDD
+TransTime  = HHmmSS
+BranchNo   = 0101
+OperNo     = x620999999
+Remark     = 
+Reserve1   = 
+Reserve2   = 
+
+
+FundAcc    = 9595000021464002
+PrdCode    = 000001
+Vol        = 1
+Amt        = 1000
+TargFundAcc= 9595000021609007
+ProtocolNo = 
+FeeCode1   = 001
+Fee1       = 1
+FeeCode2   = 002
+Fee2       = 2
+FeeCode3   = 
+Fee3       = 
+FrozenFlag = 0
+RedAmt     = 1
+AssoSerial = 
+OutProtocolNo = 
+AssoOrder  = 
+TailFlag   = 0
+

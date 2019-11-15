@@ -1,0 +1,32 @@
+#客户投资申请接口描述文件
+IPADDR      =   197.3.176.47                # IP
+PROT        =   9551                        #端口
+DataFile    =   ./fix/10001.dat             #数据文件
+Separator   =   \^
+Encoding    =   utf8
+
+#客户投资申请请求接口
+FunctionId  =                               #交易代码
+OrderId     =                               #商户订单号
+ExSerial    =                               #发起方流水号
+SecuNo      =                               #商户编号
+FromFlag    =                               #发起方式
+Channel     =                               #交易渠道
+BranchNo    =                               #交易机构
+OperNo      =                               #交易柜员
+TransDate   =                               #交易日期
+TransTime   =                               #交易时间
+Remark      =                               #备注信息
+Reserve     =                               #交易附加信息,数据库不保存
+Reserve1    =                               #保留字段,数据库保存
+Reserve2    =                               #商户私有信息
+
+AccType     =                               #客户标识类型
+Account     =                               #客户标识
+IdType      =                               #证件类型
+StartDate   =                               #开始日期  
+EndDate     =                               #结束日期  
+OrderFlag   =                               #排序标志  
+OffSet      =                               #定位串   
+QueryNum    =                               #查询行数
+TrustType   =                               #托管类别    

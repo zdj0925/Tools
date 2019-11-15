@@ -1,0 +1,84 @@
+#!/usr/bin/perl -w
+
+use strict;
+use Cwd;
+use POSIX;
+#use Net::Telnet
+#use Getopt::Long;
+
+my $ssh_string= "ssh USER\@IP";
+my $telnet_string= "telnet -e ^_ IP ";
+my $telstr="";
+my $REG_NUM= qr/^\d+$/;
+my %HAccInfo=();
+sub x_connect
+{
+    my $NO = shift;
+    #print "NO:$NO\nConType:$HAccInfo{'TYPE_'.$NO}\nName:$HAccInfo{'USER_'.$NO}\nPassword:$HAccInfo{'PASSWD_'.$NO}\n";
+    print "ConType:$HAccInfo{'TYPE_'.$NO}\nName:$HAccInfo{'USER_'.$NO}\nPassword:$HAccInfo{'PASSWD_'.$NO}\n";
+    if($HAccInfo{'TYPE_'.$NO} eq "ssh")
+    {
+        $telstr = $ssh_string;
+        $telstr =~ s/USER/$HAccInfo{'USER_'.$NO}/g;
+        $telstr =~ s/IP/$HAccInfo{'IP_'.$NO}/g;
+    }
+    else
+    {
+        $telstr=$telnet_string;
+        $telstr =~ s/IP/$HAccInfo{'IP_'.$NO}/g;
+    }
+    #print "ConType:$HAccInfo{'TYPE_'.$NO}\nName:$HAccInfo{'USER_'.$NO}\nPassword:$HAccInfo{'PASSWD_'.$NO}\n";
+    return $telstr;
+}
+
+
+open(FILE,"<","./.ssh-c")||die"cannot open the file: $!\n";
+
+my @linelist=<FILE>;
+my $lNO = 0;
+print "NO\tType\tIP\t\tuser\t\tpasswd\n";
+foreach my $eachline(@linelist)
+{
+    #$eachline =~ s/ //g;
+    #chomp($eachline);
+    #if ($eachline =~ !/^\s*$/ || $eachline =~ /^#/)
+    #{
+    #    next;
+    #}
+    my @lineinfo = split /\s+/, $eachline;
+
+    $HAccInfo{'NO_'.$lNO}     = $lNO;
+    $HAccInfo{'TYPE_'.$lNO}   = $lineinfo[0];
+    $HAccInfo{'IP_'.$lNO}     = $lineinfo[1];
+    $HAccInfo{'USER_'.$lNO}   = $lineinfo[2];
+    $HAccInfo{'PASSWD_'.$lNO} = $lineinfo[3];
+
+    print "$HAccInfo{'NO_'.$lNO}\t";     
+    print "$HAccInfo{'TYPE_'.$lNO}\t";   
+    print "$HAccInfo{'IP_'.$lNO}\t";     
+    print "$HAccInfo{'USER_'.$lNO}\t";   
+    #print "*************************\t"; 
+    #print "$HAccInfo{'PASSWD_'.$lNO}\t"; 
+    print "\n"; 
+
+    $lNO += 1;
+}
+close FILE;
+#while(my ($key,$val) = each %HAccInfo)
+#{
+#    print "$key => $val\n";
+#}
+print "Enter NO:";
+chomp (my $i=<STDIN>);
+ 
+if( $i !~ $REG_NUM) #不是数字退出
+{
+    exit(0);
+}
+#print "I=$i\n";
+my $cmdstr = x_connect $i;
+print "$cmdstr\n";
+#system($cmdstr);
+exec($cmdstr);
+
+exit(0);

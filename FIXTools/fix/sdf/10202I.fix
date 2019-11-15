@@ -1,0 +1,32 @@
+#REQ10202
+#IPADDR      =   197.3.176.47                # IP
+IPADDR      =   197.0.64.107                # IP
+PROT        =   9551                        #端口
+DataFile    =   ./fix/10001.dat             #数据文件
+Separator   =   \^
+Encoding    =   utf8
+
+
+
+FunctionId  =   10202                       #交易代码
+OrderId     =   zdj118122618150108900800001 #商户订单号
+ExSerial    =   STR32                       #发起方流水号
+SecuNo      =   2001                        #商户编号
+FromFlag    =   1                           #发起方式 0-客户 1-商户 2-银行 3-其他
+Channel     =                               #交易渠道
+BranchNo    =   1010                        #交易机构
+OperNo      =   zhaodj                      #交易柜员
+#TransDate   =   YYYYMMDD                    #交易日期
+TransDate   =   20191024                    #交易日期
+TransTime   =   HHmmSS                      #交易时间
+Remark      =                               #备注信息
+Reserve1    = 
+Reserve2    =                               #商户私有信息
+BatType     =   4                           #批量类型
+FileName    =BatCash_2001_CMBC_19102410553168.20191024 #批量申请文件名
+Count       =2                              #总笔数
+TotAmt      =54714.00                       #总金额
+AssoOrder   =                               #原订单号，补发时使用，用于清理原失败数据
+OperMode    =  
+
+

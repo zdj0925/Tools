@@ -1,0 +1,3 @@
+#table ^file   ^ feild  ^    where
+tbdict ^ ./tbdict.sql ^ * ^ where hs_key = 'B2S_BZ' ^ ^ ^
+tbfund^ ./tbfund.sql ^ * ^  where secu_no ='0010' ^ ^ ^

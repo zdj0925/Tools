@@ -1,0 +1,39 @@
+#商户主动交易
+#IPADDR      =   197.3.176.47                # IP
+IPADDR      =   197.3.136.24                # IP
+PROT        =   9551                        #端口
+DataFile    =   ./fix/data/10201.dat             #数据文件
+Separator   =   \^
+Encoding    =   utf8
+ 
+
+FunctionId  =   10201                       #交易代码
+OrderId     =595YYYYMMDDHHmmSSSTR06zdjSTR06 #商户订单号
+ExSerial    =595YYYYMMDDHHmmSSSTR06595STR06 #发起方流水号
+SecuNo      =   0007                        #商户编号
+FromFlag    =   1                           #发起方式 0-客户 1-商户 2-银行 3-其他
+Channel     =   1402                        #交易渠道
+BranchNo    =   0101                        #交易机构
+OperNo      =   zdj0999990                  #交易柜员
+TransDate   =   YYYYMMDD                    #交易日期
+TransTime   =   HHmmSS                      #交易时间
+Remark      =                               #备注信息
+Reserve1    = 
+Reserve2    =                               #商户私有信息
+
+BusinCode   =   108                         #业务类别
+FundAcc     =   9595100006092008            #资金账号
+SubCode     =                               #子业务代码
+PrdCode     =   L2639852                    #项目代码
+Amt         =   10                          #交易金额
+CurrType    =   156                         #币种
+Vol         =                               #交易份额
+InCome      =                               #付息金额
+TargFundAcc =   9595100064401004            #收款账号
+Summary     =   zhaodjtest                  #摘要信息
+StartDate   =                               #开始日期
+
+AssoSerial  =                               #流水号
+AssoOrder   =                               #商户订单号 20151201
+InvestAmt   =                               #投资人
+FrozenFlag  =                               #本笔交易是否使用付款人冻结资金 0-不使用 1-使用

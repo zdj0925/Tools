@@ -1,0 +1,29 @@
+#IPADDR     = 197.3.136.24               
+IPADDR     = 197.3.176.47               
+PROT       = 9551                        
+Encoding   = utf8
+
+FunctionId = 10301
+OrderId    = STR12
+ExSerial    =    595YYYYMMDDHHmmSSSTR06595STR06
+#ExSerial   = STR32
+SecuNo     =0001
+FromFlag   =1
+Channel    =
+BranchNo   =0101
+OperNo     =x620999999
+TransDate  = YYYYMMDD
+TransTime  = HHmmSS
+Remark=
+Reserve1=
+Reserve2=
+AccType    =1
+#Account    =9595000021464002
+Account=9595000031174008
+IdType=
+OffSet     =1
+QueryNum   =20
+TrustType=0
+BankAcc=
+BindFlag=1
+

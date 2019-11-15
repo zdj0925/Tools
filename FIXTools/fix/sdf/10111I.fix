@@ -1,0 +1,37 @@
+#订单支付
+IPADDR      =   197.3.176.47                # IP
+PROT        =   9551                        #端口
+DataFile    =   ./fix/10001.dat             #数据文件
+Separator   =   \^
+Encoding    =   utf8
+
+#订单支付请求接口
+FunctionId  =                               #交易代码
+OrderId     =                               #商户订单号
+ExSerial    =                               #发起方流水号
+SecuNo      =                               #商户编号
+FromFlag    =                               #发起方式
+Channel     =                               #交易渠道
+BranchNo    =                               #交易机构
+OperNo      =                               #交易柜员
+TransDate   =                               #交易日期
+TransTime   =                               #交易时间
+Remark1     =                               #备注信息,透传信息,后台最长512
+Reserve     =                               #交易附加信息,数据库不保存
+Reserve1    =                               #保留字段,数据库保存
+Reserve2    =                               #商户私有信息
+FundAcc     =                               #资金账号
+CurrType    =                               #币种
+TotAmt      =                               #订单总金额
+TotRedAmt   =                               #红包金额
+TotFrozenAmt=                               #外部冻结总金额
+PayerFee    =                               #付款方总费用
+AccAmt      =                               #账户金额
+DiffAmt     =                               #待支付差额
+PayChannel  =                               #支付通道
+OrderNum    =                               #子订单笔数
+SubOrders   =                               #子订单信息
+Summary     =                               #摘要信息
+Amt         =                               #公共函数使用
+Vol         =                               
+PayMode     =                               #支付模式 0-二维码扫码 1-订单号跳转

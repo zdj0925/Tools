@@ -1,0 +1,29 @@
+#IPADDR     = 197.3.136.24               
+IPADDR     = 197.3.176.47               
+PROT       = 9551                        
+Encoding   = utf8
+
+FunctionId=50206
+OrderId=STR20
+ExSerial    =    595YYYYMMDDHHmmSSSTR06595STR06
+#ExSerial=STR32
+SecuNo=
+Channel=1400
+BranchNo=3308
+OperNo=8330154601
+TransDate=YYYYMMDD
+TransTime=HHmmSS
+Remark1=
+Reserve1=
+Reserve2=
+FromFlag=3
+AssoSerial=73400201803281608086974595976521
+OriHostAction=59500030000
+OriHostPrdCode=0324010051565009
+RelDomain=537
+Status=E
+ExtendData=
+Summary=zhaodj test
+OriDate=
+Amt=200.00
+

@@ -1,0 +1,16 @@
+#系统管理的接口描述文件
+#================================================================
+#请求接口
+#一般请求接口
+sTransCode=                               #交易码
+sExSerial =                               #发起方流水号
+sBankNo   =                               #银行编号
+sBranchNo =                               #机构编号
+sTerminalId=                               #终端编号
+sOperCode =                               #柜员编号
+sAuthOpCode=                               #授权柜员
+lTransDate=                               #交易日期
+lTransTime=                               #交易时间
+cEntrustWay=                               #委托方式
+lOpFlag   =                               #请求类型0:察看, 1:启动 2:关闭
+sProcName =                               #进程名称，为空操作全部进程

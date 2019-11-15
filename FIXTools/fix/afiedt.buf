@@ -1,0 +1,2 @@
+select serial_no from tbtransreq where trans_date = '20170926' and trans_code = '10103'
+/

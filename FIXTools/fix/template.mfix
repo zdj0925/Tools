@@ -1,0 +1,25 @@
+#在配置模板时尽量 删除所有的#号注释内容！！！
+#在配置模板时尽量 删除所有的#号注释内容！！！
+#在配置模板时尽量 删除所有的#号注释内容！！！
+IPADDR=197.3.176.47                # IP
+PROT=9551                          #端口
+DataFile=./fix/data/1.txt                   #数据文件
+Separator=\^                       #分割符 必须符合正则表达
+
+FunctionId = 10011
+OrderId    = STR12                 #12位随机数  可用 STR02 STR04 STR06 STR08 STR10 STR12 STR20 STR32 
+ExSerial   = STR32                 #32位随机数
+SecuNo     = FIELD04               #数据文件中第5个字段
+FromFlag   = 0
+Channel    = FIELD01               #数据文件中第2个字段
+BranchNo   = FIELD02               #数据文件中第3个字段
+TransDate  = YYYYMMDD              #今天的年月日
+TransTime  = HHmmSS                #今天的时分秒
+Remark     =
+Reserve1   = FIELD03               #数据文件中第4个字段
+Reserve2   =
+FundAcc    = 9595000010484003
+OperFlag   = 1
+Mobile     = 13812345670
+OperNo     = FIELD00               #数据文件中第1个字段
+

@@ -1,0 +1,61 @@
+#!/usr/bin/perl -w
+
+use strict;
+use Cwd;
+use POSIX;
+#use Net::Telnet
+#use Getopt::Long;
+
+my $ssh_string= "ssh USER\@IP";
+my $telnet_string= "telnet -e ^_ IP ";
+my $telstr="";
+sub x_connect
+{
+    my @str   =@_;
+    if($str[0] eq "ssh")
+    {
+        $telstr=$ssh_string;
+        $telstr =~ s/USER/$str[2]/g;
+        $telstr =~ s/IP/$str[1]/g;
+    }
+    else
+    {
+        $telstr=$telnet_string;
+        $telstr =~ s/IP/$str[1]/g;
+    }
+    print "ConType:$str[0]\nName:$str[2]\nPassword:$str[3]\n";
+    return $telstr;
+}
+
+
+open(FILE,"<","./.ssh-c")||die"cannot open the file: $!\n";
+
+my $count = 0;
+my @linelist=<FILE>;
+my $lNO = 0;
+print "NO \t Type     IP               user     passwd\n";
+foreach my $eachline(@linelist)
+{
+    print"$lNO \t $eachline";
+    $lNO += 1;
+}
+close FILE;
+print "Enter NO:";
+chomp (my $i=<STDIN>);
+ 
+if( $i eq "q")
+{
+    exit(0);
+}
+my @lineinfo = split /\s+/, $linelist[$i];
+#for my $col(@lineinfo)
+#{
+#    print "$col.\n";
+#}
+#
+my $cmdstr = x_connect @lineinfo;
+print "$cmdstr\n";
+#system($cmdstr);
+exec($cmdstr);
+
+exit(0);
