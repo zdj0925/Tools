@@ -1,2 +1,0 @@
-svn add 
-svn --username ht-zhaodengji --password ht-zhaodengji ci -m""

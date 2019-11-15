@@ -1,6 +1,5 @@
-#IPADDR     = 197.3.136.24               
-IPADDR     = 197.3.176.47               
-PROT       = 9551                        
+IPADDR     = 107.4.196.87               
+PROT       = 9555                        
 Encoding   = utf8
 
 FunctionId=10012
@@ -18,10 +17,10 @@ Reserve1=
 Reserve2=
 OperFlag  = 0  
 PrdCode   = 12345678    
-AccName   =zhaodj_test
+AccName   =aaaaaa_test
 CurrType  =156 
 ManagerCode = 33333333333
-ManagerName = zhaodj
+ManagerName = aaaaaa
 AccRate     = 1.00
 TrustAcc    = 1111121111
 TrustAccName= hao 

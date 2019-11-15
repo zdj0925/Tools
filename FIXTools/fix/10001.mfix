@@ -1,6 +1,6 @@
-IPADDR      =   197.3.176.47                # IP
-PROT        =   9551                          #端口
-DataFile    =   ./data/10001.dat           #数据文件
+IPADDR      =   107.0.196.67                # IP
+PROT        =   9555                          #端口
+DataFile    =   ./data/data.dat           #数据文件
 Separator   =   \^
 Encoding    =   utf8
 
