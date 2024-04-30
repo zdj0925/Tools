@@ -1,0 +1,76 @@
+#!/bin/bash
+#set -x
+source ${HOME}/.profile
+# A机器上的代码仓库路径
+GIT_REPO="${HOME}/src"
+
+# SSH密钥密码
+SSH_KEY_PASSWORD="123456"
+SSH_KEY_PATH="${HOME}/.ssh/ed25519"
+
+# 1. 通过git更新代码
+echo "1. Updating code from Git..."
+cd "$GIT_REPO" || exit 1
+
+# 启动SSH Agent并添加密钥
+eval "$(ssh-agent -s)"
+
+# 通过expect交互式方式执行git pull
+expect <<EOF
+spawn ssh-add "$SSH_KEY_PATH"
+expect "ed25519:"
+send "$SSH_KEY_PASSWORD\r"
+expect eof
+EOF
+git reset --hard
+git checkout trunk
+git pull
+
+# 关闭启动SSH Agent
+eval "$(ssh-agent -k)"
+# 2. 编译工程
+# 编译命令，根据实际情况修改
+mkall
+
+# A机器上的多个路径
+source_paths=(
+    "${HOME}/etc"
+    "${HOME}/bin"
+    "${HOME}/sbin"
+    "${HOME}/lib"
+    "${HOME}/print"
+    # 添加更多路径...
+)
+
+# B机器上的相对应目录
+destination_paths=(
+    "cmbcfss@199.3.196.22:/app/userid/etc"
+    "cmbcfss@199.3.196.22:/app/userid/bin"
+    "cmbcfss@199.3.196.22:/app/userid/sbin"
+    "cmbcfss@199.3.196.22:/app/userid/lib"
+    "cmbcfss@199.3.196.22:/app/userid/print"
+    # 添加更多路径...
+)
+
+# 不需要同步的文件列表
+EXCLUDEFILE="${HOME}/etc/exclude.txt"
+# 设置rsync的参数
+#RSYNC_OPTIONS="-avz --delete --exclude-from=${EXCLUDEFILE}"
+RSYNC_OPTIONS="-avz --exclude-from=${EXCLUDEFILE}"
+# 日志文件
+log_file="/app/userid/log/sync_log.txt"
+
+date >> "$log_file"
+# 遍历每个路径进行同步
+for ((i=0; i<${#source_paths[@]}; i++)); do
+    source_path="${source_paths[i]}"
+    destination_path="${destination_paths[i]}"
+
+    echo "Syncing $source_path to $destination_path..." >> "$log_file"
+
+    # 使用rsync命令进行同步，排除不需要同步的文件
+    rsync ${RSYNC_OPTIONS} "$source_path/" "$destination_path" >> "$log_file" 2>&1
+
+    echo "Sync completed." >> "$log_file"
+done
+wait

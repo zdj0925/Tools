@@ -2,8 +2,9 @@
 
 use strict;
 use Cwd;
-use POSIX;
-#use Net::Telnet
+use Expect;
+#use POSIX;
+#use Net::OpenSSH;
 #use Getopt::Long;
 
 my $ssh_string= "ssh USER\@IP";
@@ -31,8 +32,29 @@ sub x_connect
     return $telstr;
 }
 
+sub connect_to_server {
+    my ($type, $ip, $user, $passwd) = @_;
 
-open(FILE,"<","./.ssh-c")||die"cannot open the file: $!\n";
+    my $command;
+
+    if ($type eq "ssh") {
+        #    $command = "expect -c 'spawn ssh -o ControlMaster=auto -o ControlPersist=600  $user\@$ip; expect Password:; send \"$passwd\\r\"; interact'";
+        $command = "expect -c 'spawn ssh $user\@$ip; expect assword:; send \"$passwd\\r\"; interact'";
+    }
+    elsif ($type eq "telnet") {
+        $command = "expect -c 'spawn telnet $ip; expect assword:; send \"$passwd\\r\"; interact'";
+
+    }
+    else {
+        die "Unsupported connection type: $type";
+
+    }
+
+    return ($command);
+}
+
+
+open(FILE,"<","$ENV{HOME}/.ssh-c")||die"cannot open the file: $!\n";
 
 my @linelist=<FILE>;
 my $lNO = 0;
@@ -76,7 +98,8 @@ if( $i !~ $REG_NUM) #不是数字退出
     exit(0);
 }
 #print "I=$i\n";
-my $cmdstr = x_connect $i;
+#my $cmdstr = x_connect $i;
+my $cmdstr = connect_to_server($HAccInfo{'TYPE_'.$i}, $HAccInfo{'IP_'.$i}, $HAccInfo{'USER_'.$i}, $HAccInfo{'PASSWD_'.$i});
 print "$cmdstr\n";
 #system($cmdstr);
 exec($cmdstr);

@@ -1,0 +1,35 @@
+#!/bin/bash
+#set -x
+cd ${HOME}
+source ${HOME}/.profile
+if [ $# -eq 0 ]; then
+    commit_con="  自动提交代码  "
+else
+    commit_con=$1
+fi
+GIT_REPO="${HOME}/src"
+# SSH密钥密码
+SSH_KEY_PASSWORD="aq1zsw2x"
+SSH_KEY_PATH="${HOME}/.ssh/zhaodj_rsa"
+
+# 1. 通过git提交代码
+#echo "1. Updating code from Git..."
+cd "$GIT_REPO" || exit 1
+BR=$(basename $(git symbolic-ref -q --short HEAD))
+MSG=$(printf "%s   %s   %s\n" ${BR} ${commit_con} $(date) |iconv -f gb18030 -t utf-8)
+git commit  -m "${MSG}" .
+
+# 启动SSH Agent并添加密钥
+eval "$(ssh-agent -s)"
+
+# 通过expect交互式方式执行git pull
+expect <<EOF
+spawn ssh-add "$SSH_KEY_PATH"
+expect "zhaodj_rsa:"
+send "$SSH_KEY_PASSWORD\r"
+expect eof
+EOF
+
+git push
+
+ssh-agent -k

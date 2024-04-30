@@ -1,0 +1,62 @@
+#!/bin/bash
+#set -x
+
+source ${HOME}/.profile
+# 获取当前脚本的进程ID
+SCRIPT_NAME=$0
+CURRENT_PID=$$
+
+# 检查脚本是否已经在运行
+if pgrep -f "$SCRIPT_NAME" | grep -v "$CURRENT_PID" > /dev/null; then
+    echo "Script is already running. Exiting."
+    exit 0
+fi
+
+# 定义监视的文件列表
+FILES=(
+    "$HOME/bin/122345j"
+    "$HOME/bin/122345j"
+    "$HOME/bin/122345j"
+    "$HOME/bin/122345j"
+    "$HOME/bin/122345j"
+    "$HOME/bin/122345j"
+    "$HOME/bin/122345j"
+    # 添加更多文件...
+)
+
+# 定义需要运行的程序
+
+# 存储上一次文件状态的数组
+declare -A LAST_MOD_TIMES
+
+# 初始化上一次文件状态
+for file in "${FILES[@]}"; do
+    LAST_MOD_TIMES["$file"]=$(stat -c %Y "$file")
+done
+
+# 持续监视文件变动
+while true; do
+    # 检查每个文件是否有变动
+    RESTARTFLAG="0"
+    for file in "${FILES[@]}"; do
+        current_mod_time=$(stat -c %Y "$file")
+        last_mod_time=${LAST_MOD_TIMES["$file"]}
+
+        if [ "$current_mod_time" -gt "$last_mod_time" ]; then
+            # 文件有变动，运行程序
+            echo "File $file has changed. Running $PROGRAM_TO_RUN..."
+            RESTARTFLAG="1"
+
+            # 更新上一次文件状态
+            LAST_MOD_TIMES["$file"]=$current_mod_time
+        fi
+    done
+    if [ "$RESTARTFLAG" -eq "1" ];then
+        # 添加启动文件...
+        #stopappppppppppppp
+        #startappppppppppp
+    fi
+
+    # 等待一段时间再重新检查文件变动
+    sleep 60  # 60秒，您可以根据需要调整等待时间
+done
