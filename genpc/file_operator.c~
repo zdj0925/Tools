@@ -1,0 +1,147 @@
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <errno.h>
+#include "file_operator.h"
+
+int open_file(FILE_OPERATOR *self, const char *filename, const char *mode)
+{
+    self->fused.fp = fopen(filename, mode);
+    if (self->fused.fp == NULL) {
+        return -1;
+    }
+    return 0;
+}
+
+void close_file(FILE_OPERATOR *self)
+{
+    if (self->fused.fp ) {
+        fclose(self->fused.fp);
+        self->fused.fp = NULL; 
+    }
+}
+
+size_t write_file(FILE_OPERATOR *self, const char *fptr, size_t size, size_t nmemb)
+{
+    if (self->fused.fp == NULL) {
+        return 0;
+    }
+    return fwrite(fptr, size, nmemb, self->fused.fp);
+}
+
+size_t read_file(FILE_OPERATOR *self, const char *fptr, size_t size, size_t nmemb)
+{
+    if (self->fused.fp == NULL) {
+        return 0;
+    }
+    return fread(fptr, size, nmemb, self->fused.fp);
+}
+
+char* gets_file(FILE_OPERATOR *self, char *buf, size_t size)
+{
+    if (self->fused.fp == NULL) {
+        return NULL;
+    }
+    fseek(self->fused.fp, self->fused.rptr, SEEK_SET);
+    return fgets(buf, size, self->fused.fp);
+}
+
+void print_file(FILE_OPERATOR *self, const char *format, ...)
+{
+    if (self->fused.fp == NULL) {
+        return;
+    }
+    va_list args;
+    va_start(args, format);
+    fseek(self->fused.fp, self->fused.wptr, SEEK_SET);
+    vfprintf(self->fused.fp, format, args);
+    va_end(args);
+}
+
+off_t size_file(FILE_OPERATOR *self)
+{
+    if (self->fused.fp == NULL) {
+        return 0;
+    }
+    fseek(self->fused.fp, 0, SEEK_END);
+    return ftell(self->fused.fp);
+}
+
+int eof_file(FILE_OPERATOR *self)
+{
+    if (self->fused.fp == NULL) {
+        return 0;
+    }
+    return feof(self->fused.fp);
+}
+
+void reset_read_file(FILE_OPERATOR *self)
+{
+    self->fused.rptr = 0;
+    if (self->fused.fp == NULL) {
+        return;
+    }
+    fseek(self->fused.fp, self->fused.rptr, SEEK_SET);
+}
+
+void reset_write_file(FILE_OPERATOR *self)
+{
+    self->fused.wptr = 0;
+    if (self->fused.fp == NULL) {
+        return;
+    }
+    fseek(self->fused.fp, self->fused.wptr, SEEK_SET);
+}
+
+FILE_OPERATOR* create_file ()
+{
+    FILE_OPERATOR* self = (FILE_OPERATOR*)calloc(1, sizeof(FILE_OPERATOR));
+    if (self == NULL) {
+        return NULL;
+    }
+
+    self->fused.fp = NULL;
+    self->fused.rptr = 0;
+    self->fused.wptr = 0;
+
+    self->open_file = open_file;
+    self->close_file = close_file;
+    self->write_file = write_file;
+    self->read_file = read_file;
+    self->gets_file = gets_file;
+    self->print_file = print_file;
+    //self->seek_file = seek_file;
+    self->eof_file = eof_file;
+    self->free_file = free_file;
+    self->reset_read_file = reset_read_file;
+    self->reset_write_file = reset_write_file;
+
+    return self;    
+
+
+void free_file(FILE_OPERATOR *self)
+{
+    if (self->fused.fp == NULL) {
+        return;
+    }
+    fclose(self->fused.fp);
+    self->fused.fp = NULL;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+#ifndef __FILE_OPERATOR_H
+#define __FILE_OPERATOR_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdarg.h>
+typedef struct __file_used {
+    FILE *fp;
+    unsigend long rptr;
+    unsigend long wptr;
+}FILE_USED;
+
+typeset struct __file_operator_functions {
+    int    (*open_file)(struct __file_operator_functions *self, const char *filename, const char *mode);    // 打开文件
+    void   (*close_file)(struct __file_operator_functions *self);                                 // 关闭文件
+    size_t (*write_file)(struct __file_operator_functions *self, const char *fptr, size_t size, size_t nmemb);    // 写文件
+    size_t (*read_file)(struct __file_operator_functions *self, const char *fptr, size_t size, size_t nmemb);    // 读文件
+    char*  (*gets_file)(struct __file_operator_functions *self, char *buf, size_t size);    // 读文件
+    void   (*print_file)(struct __file_operator_functions *self, const char *format, ...);    // 打印文件
+    off_t  (*seek_file)(struct __file_operator_functions *self, off_t offset, int whence);    // 移动文件指针
+    int    (*eof_file)(struct __file_operator_functions *self);    // 判断文件是否到末尾
+    void   (*free_file)(struct __file_operator_functions *self);    // 释放文件     
+    void   (*reset_read_file)(struct __file_operator_functions *self);    // 重置文件指针
+    void   (*reset_write_file)(struct __file_operator_functions *self);    // 重置文件指针  
+
+    FILE_USED fused;
+} FILE_TYPE;
+
+#endif // __FILE_OPERATOR_H 

@@ -1,0 +1,67 @@
+#ifndef __PARSER_SQL_H
+#define __PARSER_SQL_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdint.h>
+#include <errno.h>
+
+typedef enum 
+{
+    STATE_INIT = 0,
+    STATE_CREATE_KEY,
+    STATE_DROP_KEY,
+    STATE_CREATE_KEY,
+    STATE_COMMENT_KEY,
+    STATE_DROP_KEY,
+    STATE_TABLE_BEGIN,
+    STATE_TABLE_NAME,
+    STATE_COL_BEGIN,
+    STATE_COL_NAME,
+    STATE_COL_ATTRIBUTE,
+    STATE_COL_END,
+    STATE_TABLE_END,
+    STATE_TABLE_PRIMARY_KEY_BEGIN,
+    STATE_TABLE_PRIMARY_KEY_COL_BEGIN,
+    STATE_TABLE_PRIMARY_KEY_COL_END,
+    STATE_TABLE_PRIMARY_KEY_END,
+    STATE_TABLE_INDEX,
+    STATE_TABLE_INDEX_COL_BEGIN,
+    STATE_TABLE_INDEX_COL_END,
+    STATE_END
+} STATE;
+
+typedef enum
+{
+   /* 1  */ SQL_COL_TYPE_VARCHAR2 = 1,
+   /* 2  */ SQL_COL_TYPE_NUMBER,
+   /* 3  */ SQL_COL_TYPE_INTEGER,
+   /* 4  */ SQL_COL_TYPE_FLOAT,
+   /* 5  */ SQL_COL_TYPE_STRING,
+   /* 6  */ SQL_COL_TYPE_VARNUM,
+
+   /* 8  */ SQL_COL_TYPE_LONG = 8,
+   /* 9  */ SQL_COL_TYPE_VARCHAR,
+   /* 11 */ SQL_COL_TYPE_RAWID = 11,
+   /* 12 */ SQL_COL_TYPE_DATE,
+
+   /* 15 */ SQL_COL_TYPE_VARRAW = 15,
+
+   /* 23 */ SQL_COL_TYPE_RAW = 23,
+   /* 24 */ SQL_COL_TYPE_LONGRAW,
+
+   /* 68 */ SQL_COL_TYPE_UNSIGNED = 68,
+
+   /* 94 */ SQL_COL_TYPE_LONGVARCHAR = 94,
+   /* 95 */ SQL_COL_TYPE_LONGVARRAW,
+   /* 96 */ SQL_COL_TYPE_CHAR,
+   /* 97 */ SQL_COL_TYPE_CHARZ,
+
+   /*106 */ SQL_COL_TYPE_MLSLABEL = 106
+
+} SQL_COL_TYPE;
+   
+
+
+#endif // __PARSER_SQL_H
